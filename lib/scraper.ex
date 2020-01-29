@@ -15,15 +15,12 @@ defmodule Scraper do
       winning_bid = get_winning_bid(body)
 
       #  three different arrays
-      [
-        lot_number: Enum.map(lots, fn x -> x end),
-        title: Enum.map(titles, fn x -> x end),
-        winning_bid: Enum.map(winning_bid, fn x -> x end)
-      ]
+      
+      for a <- lots, b <- titles, c <- winning_bid, do: {a,b,c}
 
-      %{
-        
-      }
+            
+      # Map.put(winner, :winning_lot, win_lot)
+      
       
 
 
